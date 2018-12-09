@@ -50,16 +50,23 @@ rotate([0, 180, 0]) {
         
         //middle holes
         bigHoleDiameter = 6.5;
-        smallerHolesDiameter = 3;
+        mediumHolesDiameter = 3;
+        smallerHolesDiameter = 2;
         
         translate([x/2, y/2, 1])
         cylinder(h = 2, d = bigHoleDiameter);
         
-        translate([x/2, y/2 + bigHoleDiameter/2 + smallerHolesDiameter/2 + 2, 1])
-        cylinder(h = 2, d = smallerHolesDiameter);
+        translate([x/2, y/2 + bigHoleDiameter/2 + mediumHolesDiameter/2 + 2, 1])
+        cylinder(h = 1, d = mediumHolesDiameter);
         
-        translate([x/2, y/2 - bigHoleDiameter/2 - smallerHolesDiameter/2 - 2, 1])
-        cylinder(h = 2, d = smallerHolesDiameter);
+        translate([x/2, y/2 - bigHoleDiameter/2 - mediumHolesDiameter/2 - 2, 1])
+        cylinder(h = 1, d = mediumHolesDiameter);
+        
+        translate([x/2, y/2 + bigHoleDiameter/2 + mediumHolesDiameter/2 + 2, 2])
+        cylinder(h = 1, d = smallerHolesDiameter);
+        
+        translate([x/2, y/2 - bigHoleDiameter/2 - mediumHolesDiameter/2 - 2, 2])
+        cylinder(h = 1, d = smallerHolesDiameter);
         
     }
 
